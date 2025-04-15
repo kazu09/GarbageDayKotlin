@@ -1,4 +1,4 @@
-package com.kazu.garbageday.ui.dashboard
+package com.kazu.garbageday.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.kazu.garbageday.databinding.FragmentDashboardBinding
+import com.kazu.garbageday.databinding.FragmentNotificationsBinding
 
-class DashboardFragment : Fragment() {
+class NotificationsFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
-
+    private var _binding: FragmentNotificationsBinding? = null
+    private val viewModel: NotificationsViewModel by viewModels()
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -22,14 +24,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val notificationsViewModel =
+            ViewModelProvider(this)[NotificationsViewModel::class.java]
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textNotifications
+        viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

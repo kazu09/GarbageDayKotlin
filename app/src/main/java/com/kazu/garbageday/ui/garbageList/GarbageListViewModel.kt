@@ -1,4 +1,4 @@
-package com.kazu.garbageday.ui.dashboard
+package com.kazu.garbageday.ui.garbageList
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
