@@ -1,4 +1,6 @@
 package com.kazu.garbageday.ui.garbageDetail
 
-class GarbageDetailViewModel {
+import androidx.lifecycle.ViewModel
+
+class GarbageDetailViewModel : ViewModel() {
 }

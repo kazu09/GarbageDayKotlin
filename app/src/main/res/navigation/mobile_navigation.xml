@@ -8,18 +8,24 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.kazu.garbageday.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="@string/title_collection_day"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.kazu.garbageday.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_list"
+        android:name="com.kazu.garbageday.ui.garbageList.GarbageListFragment"
+        android:label="@string/title_garbage_list"
+        tools:layout="@layout/fragment_garbage_list" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.kazu.garbageday.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_settings"
+        android:name="com.kazu.garbageday.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_garbageDetail"
+        android:name="com.kazu.garbageday.ui.garbageDetail.GarbageDetailFragment"
+        android:label="ゴミ詳細"
+        tools:layout="@layout/fragment_garbage_detail" />
 </navigation>

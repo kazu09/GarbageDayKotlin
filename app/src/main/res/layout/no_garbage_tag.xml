@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/text_home2"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="4dp"
-    android:background="@drawable/burning_garbage_background"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/no_garbage_background"
     android:orientation="vertical">
 
     <TextView
@@ -16,7 +16,8 @@
         android:layout_marginEnd="8dp"
         android:paddingTop="6dp"
         android:paddingBottom="6dp"
-        android:text="燃えるゴミ"
-        android:textColor="@color/color_ffffff"
+        android:text="収集なし"
+        android:textColor="@color/color_000000"
         android:textSize="15dp" />
+
 </LinearLayout>
