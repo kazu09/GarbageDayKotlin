@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/text_home2"
+    android:id="@+id/plasticTrash"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:layout_marginBottom="4dp"
+    android:layout_marginStart="@dimen/dp_4"
+    android:layout_marginBottom="@dimen/dp_4"
     android:background="@drawable/plastic_trash_background"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/ad2"
+        android:id="@+id/plasticTrashText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:text="プラスチック資源"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="@string/plastic_trash"
         android:textColor="@color/color_0000cc"
-        android:textSize="15dp" />
+        android:textSize="@dimen/sp_15" />
 
 </LinearLayout>

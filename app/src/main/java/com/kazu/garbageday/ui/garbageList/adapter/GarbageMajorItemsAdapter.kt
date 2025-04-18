@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kazu.garbageday.R
+import com.kazu.garbageday.common.enums.Garbage
+import com.kazu.garbageday.common.models.ColorSet
 import com.kazu.garbageday.common.utils.ColorUtil
 import com.kazu.garbageday.databinding.GarbageButtonItemBinding
 
@@ -38,55 +40,59 @@ class GarbageMajorItemsAdapter(
     override fun getItemCount(): Int = items.size
 
     private fun setButtonColor(position: Int, holder: GarbageMajorItemsAdapter.ViewHolder) {
-        val buttonTextColor: Int
-        val buttonBackgroundColor: Int
+        val color: ColorSet
         when (position) {
-            BURNING_GARBAGE -> {
-                buttonTextColor = colorUtil.getColor(R.color.color_ffffff)
-                buttonBackgroundColor = colorUtil.getColor(R.color.color_ff0000)
+            Garbage.BurningGarbage.id -> {
+                color = ColorSet(
+                    colorUtil.getColor(R.color.color_ffffff),
+                    colorUtil.getColor(R.color.color_ff0000)
+                )
             }
 
-            PLASTIC_TRASH -> {
-                buttonTextColor = colorUtil.getColor(R.color.color_0000cc)
-                buttonBackgroundColor = colorUtil.getColor(R.color.color_bbffff)
+            Garbage.PlasticTrash.id -> {
+                color = ColorSet(
+                    colorUtil.getColor(R.color.color_0000cc),
+                    colorUtil.getColor(R.color.color_bbffff)
+                )
             }
 
-            NON_BURNING_GARBAGE -> {
-                buttonTextColor = colorUtil.getColor(R.color.color_00aa00)
-                buttonBackgroundColor = colorUtil.getColor(R.color.color_ffffaa)
+            Garbage.NoBurningGarbage.id -> {
+                color = ColorSet(
+                    colorUtil.getColor(R.color.color_00aa00),
+                    colorUtil.getColor(R.color.color_ffffaa)
+                )
             }
 
-            BOTTLES -> {
-                buttonTextColor = colorUtil.getColor(R.color.color_ffffff)
-                buttonBackgroundColor = colorUtil.getColor(R.color.color_a16eff)
+            Garbage.Bottles.id -> {
+                color = ColorSet(
+                    colorUtil.getColor(R.color.color_ffffff),
+                    colorUtil.getColor(R.color.color_a16eff)
+                )
             }
 
-            SMALL_METAL -> {
-                buttonTextColor = colorUtil.getColor(R.color.color_ffffff)
-                buttonBackgroundColor = colorUtil.getColor(R.color.color_aaaaaa)
+            Garbage.SmallMetal.id -> {
+                color = ColorSet(
+                    colorUtil.getColor(R.color.color_ffffff),
+                    colorUtil.getColor(R.color.color_aaaaaa)
+                )
             }
 
-            RESOURCE_RECOVERY -> {
-                buttonTextColor = colorUtil.getColor(R.color.color_ffffff)
-                buttonBackgroundColor = colorUtil.getColor(R.color.color_cd853f)
+            Garbage.ResourceRecovery.id -> {
+                color = ColorSet(
+                    colorUtil.getColor(R.color.color_ffffff),
+                    colorUtil.getColor(R.color.color_cd853f)
+                )
             }
 
             else -> {
-                buttonTextColor = colorUtil.getColor(R.color.color_ffffff)
-                buttonBackgroundColor = colorUtil.getColor(R.color.color_bbffff)
+                color = ColorSet(
+                    colorUtil.getColor(R.color.color_ffffff),
+                    colorUtil.getColor(R.color.color_f4a460)
+                )
             }
         }
-        holder.binding.garbageButtonText.setTextColor(buttonTextColor)
-        holder.binding.garbageButton.setBackgroundColor(buttonBackgroundColor)
-    }
-
-    companion object {
-        const val BURNING_GARBAGE = 0
-        const val PLASTIC_TRASH = 1
-        const val NON_BURNING_GARBAGE = 2
-        const val BOTTLES = 3
-        const val SMALL_METAL = 4
-        const val RESOURCE_RECOVERY = 5
+        holder.binding.garbageButtonText.setTextColor(color.textColor)
+        holder.binding.garbageButton.setBackgroundColor(color.backgroundColor)
     }
 
     inner class ViewHolder(val binding: GarbageButtonItemBinding) :

@@ -4,4 +4,20 @@
     <string name="title_garbage_list">ゴミ一覧</string>
     <string name="title_settings">設定</string>
     <string name="title_collection_day">収集曜日</string>
+    <string name="garbage_detail">ゴミ詳細</string>
+    <string name="init_title">初期タイトル</string>
+    <string name="small_metal">小さな金属類</string>
+    <string name="resource_recovery">資源回収（隔週）</string>
+    <string name="plastic_trash">プラスチック資源</string>
+    <string name="no_garbage">収集なし</string>
+    <string name="no_burning_garbage">燃えないゴミ</string>
+    <string name="burning_garbage">燃えるゴミ</string>
+    <string name="bottles">缶・瓶・ペットボトル</string>
+    <string name="monday">月曜日</string>
+    <string name="tuesday">火曜日</string>
+    <string name="wednesday">水曜日</string>
+    <string name="thursday">木曜日</string>
+    <string name="friday">金曜日</string>
+    <string name="saturday">土曜日</string>
+    <string name="sunday">日曜日</string>
 </resources>

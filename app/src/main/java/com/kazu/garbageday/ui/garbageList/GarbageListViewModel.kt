@@ -1,14 +1,15 @@
 package com.kazu.garbageday.ui.garbageList
 
 import androidx.lifecycle.ViewModel
+import com.kazu.garbageday.common.constants.CommonConstants
 
 class GarbageListViewModel : ViewModel() {
-    val tags = listOf(
-        "燃えるゴミ",
-        "プラスチック資源",
-        "燃えないゴミ",
-        "缶・瓶・ペットボトル",
-        "小さな金属",
-        "資源回収"
+    val garbageTags = listOf(
+        CommonConstants.Garbage.BURNING_GARBAGE,
+        CommonConstants.Garbage.PLASTIC_TRASH,
+        CommonConstants.Garbage.NO_BURNING_GARBAGE,
+        CommonConstants.Garbage.BOTTLES,
+        CommonConstants.Garbage.SMALL_METAL,
+        CommonConstants.Garbage.RESOURCE_RECOVERY
     )
 }
