@@ -6,5 +6,5 @@
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
     app:navigationIcon="@drawable/ic_arrow_back_black_24"
-    app:title="初期タイトル"
+    app:title="@string/init_title"
     app:titleTextColor="@android:color/white" />

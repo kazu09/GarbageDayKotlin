@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kazu.garbageday.R
+import com.kazu.garbageday.common.constants.CommonConstants
 import com.kazu.garbageday.databinding.FragmentGarbageListBinding
 import com.kazu.garbageday.ui.garbageList.adapter.GarbageMajorItemsAdapter
 import com.kazu.garbageday.ui.garbageList.adapter.GarbageMajorItemsAdapter.ClickListener
@@ -29,14 +30,17 @@ class GarbageListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initButtonAdapter()
+    }
+
+    private fun initButtonAdapter() {
         val button = binding.garbageButtonList
 
-        val adapter = GarbageMajorItemsAdapter(viewModel.tags, object : ClickListener {
+        val adapter = GarbageMajorItemsAdapter(viewModel.garbageTags, object : ClickListener {
             override fun onClickItem(item: String) {
                 val bundle = Bundle().apply {
-                    putString("garbageType", item)
+                    putString(CommonConstants.Bundle.GARBAGE_TYPE, item)
                 }
-
                 findNavController().navigate(R.id.navigation_garbageDetail, bundle)
             }
         })

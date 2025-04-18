@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/text_home2"
+    android:id="@+id/resourceRecovery"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:layout_marginBottom="4dp"
+    android:layout_marginStart="@dimen/dp_4"
+    android:layout_marginBottom="@dimen/dp_4"
     android:background="@drawable/resource_recovery_background"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/ad2"
+        android:id="@+id/resourceRecoveryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:text="資源回収（隔週）"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="@string/resource_recovery"
         android:textColor="@color/color_ffffff"
-        android:textSize="15dp" />
+        android:textSize="@dimen/sp_15" />
 
 </LinearLayout>

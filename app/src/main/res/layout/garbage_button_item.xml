@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/garbageButton"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="@dimen/dp_200"
     android:background="@color/color_ff0000">
 
     <TextView
         android:id="@+id/garbageButtonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="燃えるゴミ"
+        android:text="@string/burning_garbage"
         android:textColor="@color/color_ffffff"
-        android:textSize="30dp"
+        android:textSize="@dimen/sp_30"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

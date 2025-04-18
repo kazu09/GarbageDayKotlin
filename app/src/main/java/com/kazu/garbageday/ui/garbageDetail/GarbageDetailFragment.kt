@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.kazu.garbageday.R
+import com.kazu.garbageday.common.constants.CommonConstants
+import com.kazu.garbageday.common.models.ColorSet
 import com.kazu.garbageday.common.utils.ColorUtil
 import com.kazu.garbageday.common.utils.ToolbarUtil
 import com.kazu.garbageday.databinding.FragmentGarbageDetailBinding
@@ -30,54 +32,12 @@ class GarbageDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         colorUtil = ColorUtil(requireContext())
-        val receivedGarbageType = arguments?.getString("garbageType")
+        val receivedGarbageType = arguments?.getString(CommonConstants.Bundle.GARBAGE_TYPE)
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar_common)
+        val color: ColorSet = viewModel.setupBarColor(receivedGarbageType, colorUtil)
+        initBackButton(toolbar, receivedGarbageType, color)
+        initStatusBar(color)
 
-        val toolbarIconAndTextColor: Int
-        val backgroundColor: Int
-        when (receivedGarbageType) {
-            "燃えるゴミ" -> {
-                toolbarIconAndTextColor = colorUtil.getColor(R.color.color_ffffff)
-                backgroundColor = colorUtil.getColor(R.color.color_ff0000)
-            }
-            "プラスチック資源" -> {
-                toolbarIconAndTextColor = colorUtil.getColor(R.color.color_0000cc)
-                backgroundColor = colorUtil.getColor(R.color.color_bbffff)
-            }
-            "燃えないゴミ" -> {
-                toolbarIconAndTextColor = colorUtil.getColor(R.color.color_00aa00)
-                backgroundColor = colorUtil.getColor(R.color.color_ffffaa)
-            }
-            "缶・瓶・ペットボトル" -> {
-                toolbarIconAndTextColor = colorUtil.getColor(R.color.color_ffffff)
-                backgroundColor = colorUtil.getColor(R.color.color_a16eff)
-            }
-            "小さな金属" -> {
-                toolbarIconAndTextColor = colorUtil.getColor(R.color.color_ffffff)
-                backgroundColor = colorUtil.getColor(R.color.color_aaaaaa)
-            }
-            "資源回収" -> {
-                toolbarIconAndTextColor = colorUtil.getColor(R.color.color_ffffff)
-                backgroundColor = colorUtil.getColor(R.color.color_cd853f)
-            }
-            else -> {
-                toolbarIconAndTextColor = colorUtil.getColor(R.color.color_ffffff)
-                backgroundColor = colorUtil.getColor(R.color.color_bbffff)
-            }
-        }
-
-        ToolbarUtil.setupWithBackButton(toolbar,
-            IS_SHOW_BACK_BUTTON,
-            findNavController(),
-            requireContext(),
-            receivedGarbageType,
-            backgroundColor,
-            toolbarIconAndTextColor)
-
-        ToolbarUtil.setupStatusBar(
-            requireActivity(),
-            backgroundColor
-        )
     }
 
     override fun onDestroy() {
@@ -86,6 +46,29 @@ class GarbageDetailFragment : Fragment() {
         ToolbarUtil.setupStatusBar(
             requireActivity(),
             defaultColor
+        )
+    }
+
+    private fun initBackButton(
+        toolbar: Toolbar,
+        type: String?,
+        color: ColorSet
+    ) {
+        ToolbarUtil.setupWithBackButton(
+            toolbar,
+            IS_SHOW_BACK_BUTTON,
+            findNavController(),
+            requireContext(),
+            type,
+            color.backgroundColor,
+            color.textColor
+        )
+    }
+
+    private fun initStatusBar(color: ColorSet) {
+        ToolbarUtil.setupStatusBar(
+            requireActivity(),
+            color.backgroundColor
         )
     }
 

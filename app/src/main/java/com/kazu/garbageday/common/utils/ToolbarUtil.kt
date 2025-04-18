@@ -57,7 +57,6 @@ object ToolbarUtil {
      * ステータスバー
      *
      * @param activity Activity
-     * @param context Context
      * @param color ステータスバーカラー
      */
     fun setupStatusBar(

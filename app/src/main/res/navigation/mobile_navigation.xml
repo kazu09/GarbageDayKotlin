@@ -26,6 +26,6 @@
     <fragment
         android:id="@+id/navigation_garbageDetail"
         android:name="com.kazu.garbageday.ui.garbageDetail.GarbageDetailFragment"
-        android:label="ゴミ詳細"
+        android:label="@string/garbage_detail"
         tools:layout="@layout/fragment_garbage_detail" />
 </navigation>
